@@ -1,8 +1,6 @@
 package game2048logic;
 
 import game2048rendering.Side;
-import static game2048logic.MatrixUtils.rotateLeft;
-import static game2048logic.MatrixUtils.rotateRight;
 
 /**
  * @author  Josh Hug
@@ -47,7 +45,10 @@ public class GameLogic {
      */
     public static void tiltColumn(int[][] board, int c) {
         // TODO: fill this in in task 5
-        return;
+        int curr_minR = 0;
+        for(int r = 0; r < board.length; r++){
+            curr_minR = moveTileUpAsFarAsPossible(board, r, c, curr_minR);
+        }
     }
 
     /**
@@ -57,7 +58,7 @@ public class GameLogic {
      */
     public static void tiltUp(int[][] board) {
         // TODO: fill this in in task 6
-        return;
+        for(int curr_c = 0; curr_c < board.length; curr_c++) tiltColumn(board, curr_c);
     }
 
     /**
