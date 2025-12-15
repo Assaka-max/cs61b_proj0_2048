@@ -71,13 +71,21 @@ public class GameLogic {
     public static void tilt(int[][] board, Side side) {
         // TODO: fill this in in task 7
         if (side == Side.EAST) {
-            return;
+            MatrixUtils.rotateLeft(board);
+            tiltUp(board);
+            MatrixUtils.rotateRight(board);
         } else if (side == Side.WEST) {
-            return;
+            MatrixUtils.rotateRight(board);
+            tiltUp(board);
+            MatrixUtils.rotateLeft(board);
         } else if (side == Side.SOUTH) {
-            return;
+            MatrixUtils.rotateRight(board);
+            MatrixUtils.rotateRight(board);
+            tiltUp(board);
+            MatrixUtils.rotateLeft(board);
+            MatrixUtils.rotateLeft(board);
         } else {
-            return;
+            tiltUp(board);
         }
     }
 }
