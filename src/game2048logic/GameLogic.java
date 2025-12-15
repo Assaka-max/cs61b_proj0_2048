@@ -22,9 +22,9 @@ public class GameLogic {
         // TODO: Fill this in in tasks 2, 3, 4
         int curr_r = r;
 
-        while (curr_r > 0 && board[curr_r - 1][c] == 0) curr_r--;
+        while (curr_r > 0 && board[curr_r - 1][c] == 0 && curr_r > minR) curr_r--;
 
-        if(curr_r > 0 && board[curr_r -1][c] == board[r][c]){
+        if(curr_r > 0 && board[curr_r -1][c] == board[r][c] && curr_r > minR){
             board[curr_r - 1][c] *= 2;
             board[r][c] = 0;
             return curr_r; // 1 + curr_r - 1
