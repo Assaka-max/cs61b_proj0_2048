@@ -27,6 +27,12 @@ public class GameLogic {
             curr_r = next_r;
             next_r--;
         }
+        if(curr_r == 0) return 0;
+        if(board[next_r][c] == board[r][c]){
+            board[next_r][c] = board[r][c]*2;
+            board[r][c] = 0;
+            return 1 + next_r;
+        }
         board[curr_r][c] = board[r][c];
         if(curr_r != r) board[r][c] = 0;
         return 0;
